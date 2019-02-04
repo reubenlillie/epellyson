@@ -1,0 +1,14 @@
+{{ if and .NextInSection .PrevInSection }}
+<footer class="pager">
+	<a class="pager-previous" href="{{.NextInSection.Permalink}}">{{ i18n "previous" }}</a>
+	<a class="pager-next" href="{{.PrevInSection.Permalink}}">{{ i18n "next" }}</a>
+</footer>
+{{ else if .NextInSection }}
+<footer class="pager">
+	<a class="pager-previous" href="{{.NextInSection.Permalink}}">{{ i18n "previous" }}</a>
+</footer>
+{{ else if .PrevInSection }}
+<footer class="pager" style="justify-content:end;">
+	<a class="pager-next" href="{{.PrevInSection.Permalink}}">{{ i18n "next" }}</a>
+</footer>
+{{ end }}

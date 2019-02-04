@@ -1,0 +1,18 @@
+{{ define "main" }}
+	<main id="main">
+		<article>
+			<header>
+				<div>{{ readFile "static/img/svg/title-page-logo.svg" | safeHTML }}</div>
+				<h1>{{ .Title }}</h1>
+				<span>{{ .Site.Params.edition }}</span>
+			</header>
+				{{ .Content }}
+			<footer>
+				<p class="publisher">
+					<span class="publisher-name">{{ .Site.Params.publisher.name }}</span></br>
+					<span class="publisher-city">{{ .Site.Params.publisher.city }}</span>
+				</p>
+			</footer>
+		</article>
+	</main>
+{{ end }}

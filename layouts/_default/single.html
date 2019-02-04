@@ -1,0 +1,13 @@
+{{ define "main" }}
+	<main id="main">
+		<article>
+			<header class="chapter-title">
+				<h2>{{ .CurrentSection.Title  }}</h2>	
+			</header>
+			<section id="chapter_{{ .Params.chapter }}" class="chapter" style="counter-reset: article {{ sub .Params.weight 1 }} paragraph {{ sub .Params.weight 1 }}">
+				{{- partial "content.html" . }}
+			</section>
+			{{- partial "pager.html" . }}
+		</article>
+	</main>
+{{ end }}

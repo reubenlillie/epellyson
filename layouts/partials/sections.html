@@ -1,0 +1,21 @@
+<article class="part">
+	{{ if gt (len .Sections) 1 }}
+		<header class="part-title">
+			<h2>{{ .Title }}</h2>
+		</header>
+		<section>
+			{{ .Content }}
+		</section>
+		<ul class="subheads">
+			{{ range .Sections.ByWeight }}
+			<li><a href="{{ .URL }}">{{ if .Params.PartTitle }}{{ .Params.PartTitle}}{{ else }}{{ .Title }}{{ end }}</a></li>
+			{{ end}}
+		</ul>
+	{{ else }}
+		<header class="part-title">
+			{{ range .Sections.ByWeight }}
+				<h2><a href="{{ .URL }}">{{ .Title }}</a></h2>
+			{{ end}}
+		</header>
+	{{ end }}
+</article>

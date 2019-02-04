@@ -1,0 +1,13 @@
+<article class="chapter">
+	<header class="chapter-title">
+		<h2>{{ .Title }}</h2>
+	</header>
+	<div class="preamble">
+		{{ .Content }}
+	</div>
+	<section class="chapter-articles">
+		{{ range .Pages.ByWeight }}
+			{{- partial "content.html" . }}
+		{{ end }}
+	</section>
+</article>

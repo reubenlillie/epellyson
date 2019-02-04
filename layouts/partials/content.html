@@ -1,0 +1,22 @@
+<article id="article_{{ .Params.chapter }}_{{ .Params.weight }}" class="article">
+	<header class="article-title">
+		<h3>{{ .Title }}</h3>
+	</header>
+		{{ if .Params.note }}
+			<aside class="note">{{ .Site.Params.changes }}</aside>
+		{{ end }}
+	<section class="content">
+		{{ .Content }}
+	</section>
+	{{ $list := "scriptures" }}
+	{{ if "scriptures" }}
+		<footer>
+			<ul class="{{ $list }}">
+				{{ range .Param $list }}
+					{{ $item := . }}
+					<li>{{ $item }}</li>
+				{{ end }} 
+			</ul>
+		</footer>
+	{{ end }}
+</article>

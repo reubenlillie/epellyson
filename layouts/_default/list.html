@@ -1,0 +1,11 @@
+{{ define "main" }}
+	<main id="main">
+		{{ if .Sections }}
+			{{- partial "sections.html" . }}
+		{{ else if .Pages }}
+			{{- partial "articles.html" . }}
+		{{ else }}
+			{{- partial "preamble.html" . }}
+		{{ end }}
+	</main>
+{{ end }}

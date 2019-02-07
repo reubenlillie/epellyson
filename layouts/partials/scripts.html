@@ -1,0 +1,16 @@
+{{ $numbers := resources.Get "js/numbers.js" }}
+{{ $js := $numbers | resources.Minify }}
+{{ if eq .Kind "section"}}
+<script src="{{ $js.Permalink }}"></script>
+<script>
+	manualNumbers.insert('parts')
+	manualNumbers.insert('headings')
+	manualNumbers.insert('paragraphs')
+</script>
+{{ else if eq .Kind "page"}}
+<script src="{{ $js.Permalink }}"></script>
+<script>
+	manualNumbers.insert('headings')
+	manualNumbers.insert('paragraphs')
+</script>
+{{ end }}

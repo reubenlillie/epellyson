@@ -3,6 +3,10 @@
 <link href="https://fonts.googleapis.com/css?family=Poppins|Source+Serif+Pro" rel="stylesheet">
 <style>
 	/* Refactor */
+	.table-of-contents {
+		display: none;
+	}
+
 	main {
 		margin-bottom: 2em;
 	}
@@ -36,7 +40,7 @@
 		font-weight: normal;
 	}
 
-	.home ul::before, .home ul::after {
+	.home main ul::before, .home main ul::after {
 		content: "\26AB";
 		margin: 1em;
 		display: block;
@@ -145,7 +149,7 @@
 	header:not(.part-title),
 	figure,
 	#site_footer,
-	.home ul {
+	.home main ul {
 		text-align: center;
 	}
 
@@ -163,6 +167,19 @@
 	.singular {
 		text-indent: 1em;
 		hyphens: auto;
+	}
+
+	#the-board-of-general-superintendents-bgs {
+		text-align: center;
+		hyphens: none;
+		font-size: medium;
+		font-style: italic;
+		margin-bottom: 0;
+	}
+	
+	[data-section="foreword"] main ul {
+		margin-top: 0;
+		text-transform: uppercase;
 	}
 
 	/* Fonts */
@@ -214,7 +231,7 @@
 	.chapter h2,
 	.chapter-title,
 	.subheads,
-	.home ul,
+	.home main ul,
 	.publisher-name {
 		text-transform: uppercase;
 	}
@@ -241,7 +258,8 @@
 	/* List Styles */
 	.scriptures,
 	.subheads,
-	.home ul {
+	.home main ul,
+	[data-section="foreword"] ul {
 		list-style: none;
 		padding: 0;
 	}
@@ -255,9 +273,14 @@
 	}
 
 	.subheads li,
-	.home ul li {
+	.home main ul li {
 		margin-bottom: 1em;
 		font-size: larger;
+	}
+
+	[data-section="foreword"] main ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 	
 	/* Grid Layout on Larger Screens */
@@ -283,6 +306,10 @@
 			margin-bottom: 3em;
 			grid-row: 1;
 			box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+		}
+		
+		.table-of-contents {
+			display: block;
 		}
 	}
 

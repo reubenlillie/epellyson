@@ -2,32 +2,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Poppins|Source+Serif+Pro" rel="stylesheet">
 <style>
-	/* Grid Layout on Larger Screens */
-	@media  screen and (min-width: 900px){
-		body {
-			display: grid;
-			background: #f1f1f1;
-			grid-template-columns: 320px minmax(320px, 1fr);
-			grid-gap: 1em;
-		}
-		
-		#site_header {
-			margin-left: 1em;
-		}
-
-		main {
-			margin-right: 1em;
-		}
-
-		#site_header,
-		main {
-			margin-top: 1em;
-			margin-bottom: 3em;
-			grid-row: 1;
-			box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-		}
-	}
-	
 	main {
 		margin-bottom: 2em;
 	}
@@ -257,6 +231,32 @@
 	.home ul li {
 		margin-bottom: 1em;
 		font-size: larger;
+	}
+	
+	/* Grid Layout on Larger Screens */
+	@media  screen and (min-width: 900px){
+		body {
+			display: grid;
+			background: #f1f1f1;
+			grid-template-columns: 320px minmax(320px, 1fr);
+			grid-gap: 1em;
+		}
+		
+		#site_header {
+			margin-left: 1em;
+		}
+
+		main {
+			margin-right: 1em;
+		}
+
+		#site_header,
+		main {
+			margin-top: 1em;
+			margin-bottom: 3em;
+			grid-row: 1;
+			box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+		}
 	}
 
 	/* Counters

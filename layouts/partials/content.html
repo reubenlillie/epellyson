@@ -1,7 +1,9 @@
 <article id="article_{{ .Params.chapter }}_{{ .Params.weight }}" class="article">
+	{{ if .Title }}
 	<header class="article-title">
 		<h3>{{ .Title }}</h3>
 	</header>
+	{{ end }}
 		{{ if .Params.note }}
 			<aside class="note">{{ .Site.Params.changes }}</aside>
 		{{ end }}
